@@ -1,0 +1,7 @@
+patch:
+  style:
+    font_face:          "Segoe UI Emoji, SimSun"
+    label_font_face:    "Times New Roman"
+    # comment_font_face:  "Segoe UI Emoji"
+    ascii_font_face:    "Consolas"
+    fallback_font_face: "Segoe UI Emoji"

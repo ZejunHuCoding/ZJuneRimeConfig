@@ -1,0 +1,12 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.17.3
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Thu May 29 11:01:09 2025"
+  rime_version: 1.13.1
+patch:
+  "style/color_scheme": green_night
+  "style/font_point": 12
+  "style/label_font_face": "Times New Roman"
+  "style/label_font_point": 12
+  "style/spacing": 8
