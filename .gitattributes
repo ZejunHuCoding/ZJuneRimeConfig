@@ -1,0 +1,14 @@
+# Normalize text files in this repo
+* text=auto
+
+# Rime configuration files
+*.yaml text eol=lf
+*.yml text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.lua text eol=lf
+
+# Windows scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=lf

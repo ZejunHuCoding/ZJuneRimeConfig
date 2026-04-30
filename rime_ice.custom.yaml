@@ -1,7 +1,43 @@
+# Rime Ice schema customization
+# encoding: utf-8
+# File: rime_ice.custom.yaml
+# Scope: schema-specific behavior for ÎíÚ¡Æ´Òô, not Weasel UI skin.
+
 patch:
-  style:
-    font_face:          "Segoe UI Emoji, SimSun"
-    label_font_face:    "Times New Roman"
-    # comment_font_face:  "Segoe UI Emoji"
-    ascii_font_face:    "Consolas"
-    fallback_font_face: "Segoe UI Emoji"
+  # Candidate count for rime_ice only.
+  # If default.custom.yaml already sets menu/page_size to 9, this is redundant but explicit.
+  "menu/page_size": 9
+
+  # Main translator behavior. Keep these enabled for user dictionary learning.
+  "translator/enable_user_dict": true
+  "translator/enable_sentence": true
+  "translator/enable_encoder": true
+
+  # Optional: spelling hints shown in comments.
+  # The original rime_ice.schema.yaml uses 8.
+  "translator/spelling_hints": 8
+
+  # Optional: custom_phrase priority.
+  # Larger value means custom_phrase.txt entries are more likely to appear at the top.
+  "custom_phrase/initial_quality": 99
+
+  # Enable Lua filters for English spacing and Chinese-English spacing.
+  # These belong to schema-level candidate/text processing, not Weasel UI.
+  "engine/filters":
+    - lua_filter@*corrector
+    - reverse_lookup_filter@radical_reverse_lookup
+    - lua_filter@*autocap_filter
+    - lua_filter@*v_filter
+    - lua_filter@*pin_cand_filter
+    - lua_filter@*long_word_filter
+    - lua_filter@*reduce_english_filter
+    - simplifier@emoji
+    - simplifier@traditionalize
+    - lua_filter@*search@radical_pinyin
+
+    # Added spacing filters
+    - lua_filter@*en_spacer
+    - lua_filter@*cn_en_spacer
+
+    # Keep uniquifier last to remove duplicate candidates after all filters.
+    - uniquifier

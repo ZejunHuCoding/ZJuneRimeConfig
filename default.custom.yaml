@@ -1,0 +1,24 @@
+# Rime default customization
+# encoding: utf-8
+# File: default.custom.yaml
+# Scope: global Rime settings shared by all schemas.
+
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.17.4
+  generator: "manual"
+  modified_time: "2026-04-30"
+  rime_version: 1.13.1
+
+patch:
+  # 1) Global candidate count per page.
+  # This affects all schemas unless a schema-specific custom file overrides it.
+  "menu/page_size": 9
+
+  # 2) Enabled schemas shown in the schema switcher.
+  # Keep rime_ice. Remove unused schemas if you want a cleaner switcher.
+  schema_list:
+    - {schema: rime_ice}
+    # - {schema: luna_pinyin_simp}
+    # - {schema: stroke}
+    # - {schema: luna_quanpin}

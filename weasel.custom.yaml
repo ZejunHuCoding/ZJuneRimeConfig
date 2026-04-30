@@ -1,12 +1,92 @@
+# Weasel UI customization
+# encoding: utf-8
+# File: weasel.custom.yaml
+# Scope: Windows Weasel frontend UI, including skin, fonts, layout, and candidate window style.
+
 customization:
   distribution_code_name: Weasel
-  distribution_version: 0.17.3
-  generator: "Weasel::UIStyleSettings"
-  modified_time: "Thu May 29 11:01:09 2025"
+  distribution_version: 0.17.4
+  generator: "manual"
+  modified_time: "2026-04-30"
   rime_version: 1.13.1
+
 patch:
-  "style/color_scheme": green_night
-  "style/font_point": 12
+  # Use the custom dark skin defined below.
+  "style/color_scheme": zjMoonlight
+  "style/color_scheme_dark": zjMoonlight
+
+  # -----------------------------
+  # Font interface
+  # -----------------------------
+  # Main candidate font. You can place English font first, then Chinese fallback.
+  "style/font_face": "Segoe UI Emoji:23:23, Segoe UI Emoji:2a:2a, Segoe UI Emoji:30:39, Segoe UI Emoji:fe0f:fe0f, Segoe UI Emoji:20e3:20e3, Segoe UI, SimSun, DengXian, Segoe UI Emoji, Noto Color Emoji, Segoe UI Symbol"
   "style/label_font_face": "Times New Roman"
-  "style/label_font_point": 12
-  "style/spacing": 8
+  "style/comment_font_face": "Microsoft YaHei UI"
+
+  # Font sizes. Adjust these three values when needed.
+  "style/font_point": 12
+  "style/label_font_point": 10
+  "style/comment_font_point": 8
+
+  # -----------------------------
+  # Candidate window behavior
+  # -----------------------------
+  "style/inline_preedit": true
+  "style/preedit_type": composition
+  "style/horizontal": true
+  "style/label_format": "%s"
+  "style/mark_text": ""
+  "style/candidate_abbreviate_length": 30
+
+  # -----------------------------
+  # Rounded and comfortable layout
+  # -----------------------------
+  "style/layout/border_width": 1
+  "style/layout/margin_x": 10
+  "style/layout/margin_y": 8
+  "style/layout/spacing": 10
+  "style/layout/candidate_spacing": 18
+  "style/layout/hilite_spacing": 6
+  "style/layout/hilite_padding": 7
+  "style/layout/corner_radius": 14
+  "style/layout/round_corner": 10
+  "style/layout/shadow_radius": 10
+  "style/layout/shadow_offset_x": 0
+  "style/layout/shadow_offset_y": 4
+
+  # -----------------------------
+  # Custom skin: zjMoonlight
+  # color_format: rgba means 0xRRGGBBAA
+  # -----------------------------
+  "preset_color_schemes/zjMoonlight":
+    name: "zjMoonlight£¯zjÔÂ¹â"
+    author: "Zejun Hu"
+    color_format: rgba
+
+    # Base panel
+    back_color: 0x111827F2
+    border_color: 0x1E3A5FFF
+    shadow_color: 0x00000080
+
+    # Normal candidate text
+    text_color: 0xE5E7EBFF
+    candidate_text_color: 0xE5E7EBFF
+    candidate_back_color: 0x11182700
+    label_color: 0x93A4B8FF
+    comment_text_color: 0x7C8DA5FF
+
+    # Preedit / composition area
+    hilited_text_color: 0xFFFFFFFF
+    hilited_back_color: 0x1E293BFF
+
+    # Selected candidate: comfortable but visible blue
+    hilited_mark_color: 0x60A5FAFF
+    hilited_candidate_back_color: 0x2563EBE6
+    hilited_candidate_border_color: 0x60A5FAFF
+    hilited_candidate_text_color: 0xFFFFFFFF
+    hilited_candidate_label_color: 0xDBEAFEFF
+    hilited_comment_text_color: 0xBFDBFEFF
+
+    # Optional page arrow colors when shown
+    nextpage_color: 0x93A4B8FF
+    prevpage_color: 0x93A4B8FF
